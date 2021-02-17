@@ -3,16 +3,16 @@
 
 ## users テーブル
 
-| Column          | Type    | Options     |
-| --------------- | ------- | ----------- |
-| email           | string  | null: false |
-| password        | string  | null: false |
-| nickname        | string  | null: false |
-| last_name       | string  | null: false |
-| first_name      | string  | null: false |
-| last_name_kana  | string  | null: false |
-| first_name_kana | string  | null: false |
-| birthday        | date    | null: false |
+| Column          | Type    | Options                   |
+| --------------- | ------- | ------------------------- |
+| email           | string  | null: false, unique: true |
+| password        | string  | null: false               |
+| nickname        | string  | null: false               |
+| last_name       | string  | null: false               |
+| first_name      | string  | null: false               |
+| last_name_kana  | string  | null: false               |
+| first_name_kana | string  | null: false               |
+| birthday        | date    | null: false               |
 
 ### Association
 
@@ -66,7 +66,7 @@
 | prefecture_id    | integer    | null: false                    |
 | municipality     | string     | null: false                    |
 | address          | string     | null: false                    |
-| building_name    | string     | null: false                    |
+| building_name    | string     |                                |
 | phone_number     | integer    | null: false                    |
 | buy              | references | null: false, foreign_key: true |
 
