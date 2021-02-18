@@ -1,9 +1,10 @@
-<% if @user.errors.any? %>
+<%# locals: { user: @user} で user = @user として使用 %>
+<% if user.errors.any? %>
 <div class="error-alert">
   <ul>
-    <%# 空白カラム数の分だけ、エラーメッセージを出力 %>
-    <% @user.errors.full_messages.each do |message| %>
-    <li class='error-message'><%= message %></li>
+    <%# 空白カラム数の分だけ、その該当カラムのエラーメッセージを出力 %>
+    <% user.errors.full_messages.each do |message| %>
+      <li class='error-message'><%= message %></li>
     <% end %>
   </ul>
 </div>
