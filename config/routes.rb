@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  # ホームページ(http://localhost:3000/)はitemsコントローラーのindexアクションへ飛ぶ。
+  root to: "items#index" 
 end
