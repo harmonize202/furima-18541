@@ -11,7 +11,7 @@
   </div>
 
   <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
-  <%= render partial: 'devise/shared/error_messages', locals: { user: @user} %>
+  <%= render 'devise/shared/error_messages', model: f.object %>
 
   <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
 
