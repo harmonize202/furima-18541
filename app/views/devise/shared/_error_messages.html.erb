@@ -1,0 +1,10 @@
+<% if model.errors.any? %>
+<div class="error-alert">
+  <ul>
+    <%# 空白カラム数の分だけ、その該当カラムのエラーメッセージを出力 %>
+    <% model.errors.full_messages.each do |message| %>
+      <li class='error-message'><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
