@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   # 半角英数字(大文字・小文字)のみの入力(passwordにバリデーションをかける)
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i
-  validates :password, presence: true, format: { with: VALID_PASSWORD_REGEX }
+  validates :password, format: { with: VALID_PASSWORD_REGEX }
 
   validates :nickname, presence: true
 
