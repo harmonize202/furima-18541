@@ -4,6 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  # そのユーザー情報が削除されると、商品、購入、コメント情報が連動して削除される。
+  has_many :items,    dependent: :destroy
+  # has_many :buys,     dependent: :destroy
+  # has_many :comments, dependent: :destroy
+
   # 半角英数字(大文字・小文字)のみの入力(passwordにバリデーションをかける)
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i
   validates :password, format: { with: VALID_PASSWORD_REGEX }
