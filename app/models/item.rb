@@ -1,5 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :user
+  has_one_attached :image
   # 商品が削除されると購入情報も削除される
   # has_one    :buy,  dependent: :destroy
 
