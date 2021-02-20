@@ -15,7 +15,7 @@ class Item < ApplicationRecord
   validates :explanation, presence: true
   validates :price,       presence: true
 
-  #ジャンルの選択が「--」(１つ目の選択肢)の時は保存できないようにする。バリデーションの１種。
+  #ジャンルの選択が「---」(１つ目の選択肢)の時は保存できないようにする。バリデーションの１種。
   validates :category_id,        numericality: { other_than: 1 }
   validates :status_id,          numericality: { other_than: 1 }
   validates :delivery_fee_id,    numericality: { other_than: 1 }
