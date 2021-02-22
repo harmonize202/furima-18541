@@ -13,7 +13,11 @@ class Item < ApplicationRecord
 
   validates :item_name,   presence: true
   validates :explanation, presence: true
-  validates :price,       presence: true
+  validates :image,       presence: true
+
+  # 「価格」は半角数字のみ、かつ、の入力
+  VALID_PRICE_REGEX = /\A[0-9]+\z/
+  validates :price,   presence: true, format: { with: VALID_PRICE_REGEX }, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
 
   #ジャンルの選択が「---」(１つ目の選択肢)の時は保存できないようにする。バリデーションの１種。
   validates :category_id,        numericality: { other_than: 1 }
