@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   # そのユーザー情報が削除されると、商品、購入、コメント情報が連動して削除される。
-  has_many :items,    dependent: :destroy
+  has_many :items, dependent: :destroy
   # has_many :buys,     dependent: :destroy
   # has_many :comments, dependent: :destroy
 
