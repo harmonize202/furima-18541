@@ -21,7 +21,6 @@ class Item < ApplicationRecord
                       numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
   end
 
-
   # ジャンルの選択が「---」(１つ目の選択肢)の時は保存できないようにする。バリデーションの１種。
   with_options numericality: { other_than: 1 } do
     validates :category_id
