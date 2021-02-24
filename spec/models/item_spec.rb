@@ -82,7 +82,7 @@ RSpec.describe Item, type: :model do
     end
 
     context '情報が保存できる時' do
-      it '商品画像を1枚つけることが必須であること／販売価格は¥300~¥9,999,999の間のみ保存可能であること／販売価格は半角数字のみ保存可能であること' do
+      it 'すべての値が存在すれば保存可能であること' do
         expect(@item).to be_valid
       end
     end
